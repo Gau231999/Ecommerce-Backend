@@ -17,7 +17,7 @@ import com.sun.istack.NotNull;
 @Table(name="CategoryTable") 
 public class Category {
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy =  GenerationType.SEQUENCE)
 	private int categoryId;
 	@NotNull
 	private String categoryTitle;

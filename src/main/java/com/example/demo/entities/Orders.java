@@ -21,7 +21,7 @@ import com.sun.istack.NotNull;
 @Table(name="OrdersTable") 
 public class Orders {
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy =  GenerationType.SEQUENCE)
 	private int orderId;
 	
 	@NotNull
