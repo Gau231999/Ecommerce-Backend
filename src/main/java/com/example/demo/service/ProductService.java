@@ -42,7 +42,7 @@ public class ProductService {
 				final String Upload_dir = new ClassPathResource("/static/images/").getFile().getAbsolutePath();
 			 	URL url = new URL("file:///"+product.getProductImageDeploymentPath());
 				InputStream is = url.openStream();
-				OutputStream os = new FileOutputStream(Upload_dir+"\\"+product.getProductDescription()+".png");
+				OutputStream os = new FileOutputStream(Upload_dir+"\\"+product.getProductName()+".png");
 
 				byte[] b = new byte[2048];
 				int length;
@@ -51,7 +51,7 @@ public class ProductService {
 				}
 				is.close();
 				os.close();
-				product.setProductImageDeploymentPath(Upload_dir+"\\"+product.getProductDescription()+".png");
+				product.setProductImageDeploymentPath(Upload_dir+"\\"+product.getProductName()+".png");
 				return productRepository.save(product);
 		} catch (Exception e) {
 			
