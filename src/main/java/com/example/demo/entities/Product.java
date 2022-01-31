@@ -28,6 +28,7 @@ public class Product {
 	private String productName;
 	@NotNull
 	private String productDescription;
+	@NotNull
 	private String productImageDeploymentPath;
 	@NotNull
 	private String productQuantity;

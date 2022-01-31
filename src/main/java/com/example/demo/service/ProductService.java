@@ -38,26 +38,7 @@ public class ProductService {
 	
 	public Product ProductPost(Product product) throws IOException
 	{
-		try {
-				final String Upload_dir = new ClassPathResource("/static/images/").getFile().getAbsolutePath();
-			 	URL url = new URL("file:///"+product.getProductImageDeploymentPath());
-				InputStream is = url.openStream();
-				OutputStream os = new FileOutputStream(Upload_dir+"\\"+product.getProductName()+".png");
-
-				byte[] b = new byte[2048];
-				int length;
-				while ((length = is.read(b)) != -1) {
-					os.write(b, 0, length);
-				}
-				is.close();
-				os.close();
-				product.setProductImageDeploymentPath(Upload_dir+"\\"+product.getProductName()+".png");
-				return productRepository.save(product);
-		} catch (Exception e) {
-			
-		}
-		return null;
-		
+		return productRepository.save(product);
 	}
 	
 	public List<Product> ProductGetAll()
